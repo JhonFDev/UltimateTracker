@@ -5,7 +5,7 @@ import SetupTeams from "../../components/tournament/SetupTeams";
 export default function SetupMatchScreen() {
   return (
     <View style={styles.viewmatch}>
-      <Text>MatchScreen</Text>
+      <Text>SetupMatchScreen</Text>
 
       <View>
         <Text>Configuracion de los equipos</Text>
@@ -20,5 +20,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    
   },
 });

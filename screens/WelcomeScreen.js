@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
   safeareaview: {
     flex: 1,
     justifyContent: "center",
+    alignItems:"center"
   },
   viewcontainerwelcome: {
     justifyContent: "center",

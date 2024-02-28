@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Ultimatetracker",
-    "slug": "Ultimatetracker",
+    "slug": "ultimatetracker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c91ce4f9-157f-4396-8a7a-efacc73195ec"
+      }
+    },
+    "owner": "jhonfdev",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c91ce4f9-157f-4396-8a7a-efacc73195ec"
     }
   }
 }
