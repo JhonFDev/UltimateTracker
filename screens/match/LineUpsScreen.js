@@ -22,7 +22,6 @@ export default function LineUpsScreen() {
             justifyContent: "center",
             alignItems: "center",
             width: 350,
-            height: 100,
             borderRadius: 40,
             gap: 15,
           }}
@@ -30,15 +29,17 @@ export default function LineUpsScreen() {
           <Input
             placeholder="Nombre del Equipo"
             placeholderTextColor={"#111"}
-            containerStyle={{ width: 250 }}
+            containerStyle={{ width: 200 }}
             inputStyle={{
-              borderColor: "red",
-              borderBottomColor: "white",
               textAlign: "center",
               fontSize: 20,
               fontWeight: "700",
+              width:200
             }}
             textContentType="name"
+            style={{ borderWidth: 1, borderColor: "black", borderRadius:20 }}
+            inputContainerStyle={{borderWidth: 0, borderColor: "transparent"}}
+            focusable
           />
           <Button
             icon={
