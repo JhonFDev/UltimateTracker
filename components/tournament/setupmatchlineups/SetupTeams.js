@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import Buttonx from "../../Buttonx";
+import {Buttonx} from "../../Buttonx";
 import { useNavigation } from "@react-navigation/native";
 import { Button, Icon } from "@rneui/themed";
 
