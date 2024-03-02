@@ -6,8 +6,8 @@ import {
   useWindowDimensions,
 } from "react-native";
 import React from "react";
-import SetupLineUps from "../../components/tournament/SetupLineUps";
 import { Button, Icon, Input } from "@rneui/themed";
+import SetupLineUps from "../../components/tournament/setupmatchlineups/SetupLineUps";
 
 export default function LineUpsScreen() {
   return (

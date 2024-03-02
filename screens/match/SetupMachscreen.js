@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import SetupTeams from "../../components/tournament/SetupTeams";
+import SetupTeams from "../../components/tournament/setupmatchlineups/SetupTeams";
 
 export default function SetupMatchScreen() {
   return (
