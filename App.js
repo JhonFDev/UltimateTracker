@@ -15,7 +15,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="welcome"
+        initialRouteName="setupmatch"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="welcome" component={WelcomeScreen} />

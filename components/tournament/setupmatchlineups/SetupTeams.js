@@ -52,8 +52,8 @@ export default function SetupTeams() {
           }
           title={"Empezar"}
           titleStyle={{ fontSize: 20, fontWeight: "600" }}
-          containerStyle={{ borderRadius: 40 }}
-          buttonStyle={{ display: "flex", justifyContent: "space-evenly" }}
+          containerStyle={{ borderRadius: 40,top:30 }}
+          buttonStyle={{ display: "flex", justifyContent: "space-evenly", }}
           iconRight
         />
       </View>

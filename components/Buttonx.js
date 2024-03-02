@@ -16,6 +16,8 @@ export function Buttonx(props) {
     </TouchableOpacity>
   );
 }
+
+
 export function ArrowBackButton() {
   const navigation = useNavigation();
   return (
@@ -24,7 +26,7 @@ export function ArrowBackButton() {
       style={{ ...styles.btntoucharrowleft }}
       onPress={() => navigation.goBack()}
     >
-    <Icon name="arrow-left" type="feather" color={"black"} size={35} />
+    <Icon name="arrow-left-thick" type="material-community" color={"#01214e"} size={35} />
       
     </TouchableOpacity>
     </View>
@@ -47,8 +49,8 @@ const styles = StyleSheet.create({
   },
   btntoucharrowleft:{
     position: "absolute",
-    top: 30,
-    left: 13,
+    top: 35,
+    left: 23,
     borderRadius: 30,
     backgroundColor: "orange",
   }
