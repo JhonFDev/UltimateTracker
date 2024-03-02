@@ -13,44 +13,46 @@ export default function LineUpsScreen() {
   return (
     <SafeAreaView style={styles.safearealineups}>
       <View style={styles.viewlineups}>
-        <Text>LineUpsScreen</Text>
+        <Text style={{fontSize:19}}>Alineaciones</Text>
         <View
           style={{
             display: "flex",
             flexDirection: "row",
             borderWidth: 1,
-            justifyContent: "center",
-            alignItems: "center",
+            justifyContent: "space-around",
+            alignItems:"center",
             width: 350,
+            height:80,
             borderRadius: 40,
-            gap: 15,
           }}
         >
           <Input
             placeholder="Nombre del Equipo"
             placeholderTextColor={"#111"}
-            containerStyle={{ width: 200 }}
+            containerStyle={{ width: 200, paddingTop:20 }}
             inputStyle={{
               textAlign: "center",
               fontSize: 20,
               fontWeight: "700",
-              width:200
+              width:250,
+              
             }}
             textContentType="name"
-            style={{ borderWidth: 1, borderColor: "black", borderRadius:20 }}
-            inputContainerStyle={{borderWidth: 0, borderColor: "transparent"}}
-            focusable
+            style={{   alignItems:"center", justifyContent:"center" }}
+            inputContainerStyle={{borderColor: "transparent"}}
+            
           />
+
           <Button
             icon={
               <Icon
                 name="check-decagram-outline"
                 type="material-community"
-                size={30}
+                size={25}
                 color={"white"}
               />
             }
-            buttonStyle={{ backgroundColor: "#517fa4", borderRadius: 20 }}
+            buttonStyle={{ backgroundColor: "#01214e", borderRadius: 20 }}
           />
         </View>
         <SetupLineUps />
@@ -62,8 +64,8 @@ export default function LineUpsScreen() {
 const styles = StyleSheet.create({
   safearealineups: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
+    paddingTop:50
   },
   viewlineups: {
     width: 380,
