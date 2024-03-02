@@ -6,15 +6,15 @@ import { useNavigation } from "@react-navigation/native";
 export default function SetupTeams() {
   const navigation = useNavigation();
   return (
-    <View style={{borderWidth:1}}>
-      <Text>SetupTeams</Text>
+    <View style={{ width:350}}>
       <Buttonx
-        text="Burgama"
+        text="Team 1"
         onpress={() => navigation.navigate("lineups")}
-        backgroundcolor="lightblue"
-        color="black"
+        backgroundcolor="#d9a627"
+        color="#01214e"
+        size={20}
       />
-      <Buttonx text="Discoy" backgroundcolor="black" color="white"/>
+      <Buttonx text="Team 2" backgroundcolor="#01214e" color="white" size={20}/>
     </View>
   );
 }
