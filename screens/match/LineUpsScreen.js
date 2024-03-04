@@ -1,5 +1,6 @@
 import {
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -16,7 +17,7 @@ export default function LineUpsScreen() {
       <ArrowBackButton />
 
       <SafeAreaView style={styles.safearealineups}>
-        <View style={styles.viewlineups}>
+        <ScrollView style={styles.viewlineups} contentContainerStyle={{alignItems: "center",}}>
           <Text style={{ fontSize: 19 }}>Alineaciones</Text>
           <View
             style={{
@@ -58,7 +59,7 @@ export default function LineUpsScreen() {
             />
           </View>
           <SetupLineUps />
-        </View>
+        </ScrollView>
       </SafeAreaView>
     </>
   );
@@ -74,6 +75,6 @@ const styles = StyleSheet.create({
     width: 380,
     height: 650,
     display: "flex",
-    alignItems: "center",
+    
   },
 });

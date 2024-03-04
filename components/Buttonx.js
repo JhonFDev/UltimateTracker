@@ -4,10 +4,10 @@ import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
 
 export function Buttonx(props) {
-  const { onpress, text, color, backgroundcolor, fontsize } = props;
+  const { onpress, text, color, backgroundcolor, fontsize,width,heigth } = props;
   return (
     <TouchableOpacity
-      style={{ ...styles.btnx, backgroundColor: backgroundcolor }}
+      style={{ ...styles.btnx, backgroundColor: backgroundcolor, width:width, height:heigth }}
       onPress={onpress}
     >
       <Text style={{ ...styles.txtbtnx, color: color, fontSize: fontsize }}>

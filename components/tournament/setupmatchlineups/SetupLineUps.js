@@ -66,7 +66,7 @@ export default function SetupLineUps() {
           </ListItem.Content>
         </ListItem>
       </ScrollView>
-      <View style={{ width: 300, paddingTop: 10, height: 200 }}>
+      <View style={{ width: 400, paddingTop: 10, height: 200, backgroundColor:"#11111120" }}>
         <Input
           placeholder="Nombre"
           placeholderTextColor={"#111"}
