@@ -1,7 +1,8 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
-import { Button, Text } from "react-native-paper";
+import {  Text } from "react-native-paper";
 import { Buttonx } from "../Buttonx";
+import { Button, Icon, Image, LinearProgress } from "@rneui/themed";
 
 export default function Tournament() {
   return (
@@ -14,7 +15,16 @@ export default function Tournament() {
       }}
     >
       <View>
-        <Button />
+        <Button
+          icon={<Image source={require('../../assets/BurgamaBlue.png')} style={{width:40, height:40}}/>}
+        >
+          <Text
+            variant="titleLarge"
+            style={{ fontSize: 20, fontWeight: "bold" }}
+          >
+            Burgama
+          </Text>
+        </Button>
       </View>
       <Text
         style={{
@@ -26,12 +36,9 @@ export default function Tournament() {
       >
         VS
       </Text>
-      <Buttonx
-        text="Discoy"
-        backgroundcolor="#01214e"
-        color="white"
-        fontsize={20}
-      />
+      <Button icon={"turtle"} textColor="#d9a627" buttonColor="#01214e">
+        <Text variant="titleLarge" style={{fontSize:20, fontWeight:"bold", color:"white"}}>Discoy</Text>
+      </Button>
     </View>
   );
 }
