@@ -36,6 +36,7 @@ export default function SetupTeams() {
         style={{ margin: 20, height: 100, justifyContent: "center", top: 30 }}
       >
         <Button
+        onPress={() => navigation.navigate("match")}
           icon={
             <Icon
               name="arrow-right-bold"

@@ -4,7 +4,7 @@
     "slug": "ultimatetracker",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/Trip.webp",
+    "icon": "./assets/BurgamaBlue.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/Trip.webp",
