@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
-import { Text } from "react-native-paper";
+import { Chip, Text } from "react-native-paper";
 import { Button, Image } from "@rneui/themed";
 
 export default function Tournament() {
@@ -60,7 +60,7 @@ export default function Tournament() {
           fontWeight: "bold",
           textAlign: "center",
           marginTop: 20,
-          right: 20,
+          right: 10,
         }}
       >
         VS
@@ -88,7 +88,8 @@ export default function Tournament() {
             Discoy
           </Text>
         </Button>
-        <Text
+        <Chip style={{backgroundColor:"lightgreen",width:65,height:65, justifyContent:"center",}} elevated textStyle={{fontWeight:"bold", color:"black", borderWidth:1,width:40,textAlign:"center",fontSize:20,}} >8 </Chip>
+        {/* <Text
           variant="displayLarge"
           style={{
             borderWidth: 1,
@@ -102,7 +103,7 @@ export default function Tournament() {
           }}
         >
           8
-        </Text>
+        </Text> */}
       </View>
 
       {/* Sets and times */}
@@ -111,8 +112,15 @@ export default function Tournament() {
           <Text variant="displaySmall" >set {<Text> 2 </Text>}</Text>
         </View>
         <View>
-          <Text variant="displaySmall">Time {<Text>40:00</Text>}</Text>
+          <Text variant="displaySmall">Time {<Text>40:00</Text>}</Text>          
         </View>
+          <View style={{ display:"flex", flexDirection:"row" ,alignItems:"center"}}>
+          <Chip style={{backgroundColor:"lightgreen"}} compact  elevated disabled mode="flat" textStyle={{fontSize:17, fontWeight:"bold", color:"black"}}>10</Chip>
+        <Text style={{fontSize:17, }}>  minutos para ultima jugada</Text>
+          </View>
+      </View>
+      <View>
+        
       </View>
     </View>
   );
@@ -128,12 +136,12 @@ const styles = StyleSheet.create({
   },
   viewsetstimes: {
     borderWidth: 1,
-    width: 370,
-    height: 250,
+    width: 270,
+    height: 220,
     top: 10,
     display:"flex",
     justifyContent:"center",
     alignItems:"center",
-    gap:20
+    gap:40
   },
 });
