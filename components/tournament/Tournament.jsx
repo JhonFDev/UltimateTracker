@@ -2,22 +2,24 @@ import { StyleSheet, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Chip, Text } from "react-native-paper";
 import { Button, Image, LinearProgress } from "@rneui/themed";
+import * as Progress from 'react-native-progress';
+import { CountdownCircleTimer } from 'react-native-countdown-circle-timer';
 
 export default function Tournament() {
-  const [progress, setProgress] = useState(0);
+  const [progres, setProgress] = useState(0);
   useEffect(() => {
     let subs = true
-    if (progress < 1 && progress!==0) {
+    if (progres < 1 && progres!==0) {
       setTimeout(() => {
         if (subs) {
-          setProgress(progress + 0.01)
+          setProgress(progres + 0.01)
         }
       },450)
     }
     return() => {
       subs = false
     }
-  },[progress])
+  },[progres])
 
   return (
     <View
@@ -183,7 +185,18 @@ export default function Tournament() {
       >
       <View style={{display:"flex",width:100,gap:10}}>
         <Button title={`Time Spirit`}  onPress={() => {setProgress(0.000001)}}/>
-        <LinearProgress value={progress} variant="determinate"/>
+        <LinearProgress value={progres} variant="determinate"/>
+        <Progress.Circle size={50}  showsText={true} indeterminateAnimationDuration={1000}  progress={progres} />
+        <CountdownCircleTimer
+    isPlaying
+    duration={7}
+    colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+    colorsTime={[7, 5, 2, 0]}
+    size={70}
+    key={progres}
+  >
+    {({ remainingTime }) => <Text>{remainingTime}</Text>}
+  </CountdownCircleTimer>
       </View>
         <Button title={`Time Out`} />
       </View>
