@@ -2,24 +2,30 @@ import { StyleSheet, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Chip, Text } from "react-native-paper";
 import { Button, Image, LinearProgress } from "@rneui/themed";
-import * as Progress from 'react-native-progress';
-import { CountdownCircleTimer } from 'react-native-countdown-circle-timer';
+import * as Progress from "react-native-progress";
+import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
 
 export default function Tournament() {
   const [progres, setProgress] = useState(0);
+  const [progresTS, setProgressTS] = useState(0);
+
   useEffect(() => {
-    let subs = true
-    if (progres < 1 && progres!==0) {
+    let subs = true;
+    if (progres < 1 && progres !== 0) {
       setTimeout(() => {
         if (subs) {
-          setProgress(progres + 0.01)
+          setProgress(progres + 0.01);
         }
-      },450)
+      }, 45000);
     }
-    return() => {
-      subs = false
-    }
-  },[progres])
+    return () => {
+      subs = false;
+    };
+  }, [progres]);
+
+useEffect(() => {
+
+})
 
   return (
     <View
@@ -124,21 +130,6 @@ export default function Tournament() {
         >
           8{" "}
         </Chip>
-        {/* <Text
-          variant="displayLarge"
-          style={{
-            borderWidth: 1,
-            fontWeight: "bold",
-            backgroundColor: "#111",
-            color: "#fff",
-            fontSize: 40,
-            width: 70,
-            textAlign: "center",
-            borderRadius: 40,
-          }}
-        >
-          8
-        </Text> */}
       </View>
 
       {/* Sets and times */}
@@ -183,21 +174,48 @@ export default function Tournament() {
           alignItems: "center",
         }}
       >
-      <View style={{display:"flex",width:100,gap:10}}>
-        <Button title={`Time Spirit`}  onPress={() => {setProgress(0.000001)}}/>
-        <LinearProgress value={progres} variant="determinate"/>
-        <Progress.Circle size={50}  showsText={true} indeterminateAnimationDuration={1000}  progress={progres} />
-        <CountdownCircleTimer
-    isPlaying
-    duration={7}
-    colors={['#004777', '#F7B801', '#A30000', '#A30000']}
-    colorsTime={[7, 5, 2, 0]}
-    size={70}
-    key={progres}
-  >
-    {({ remainingTime }) => <Text>{remainingTime}</Text>}
-  </CountdownCircleTimer>
-      </View>
+        <View
+          style={{
+            display: "flex",
+            width: 150,
+            gap: 10,
+            borderWidth: 1,
+            alignItems: "center",
+          }}
+        >
+          <Button
+            title={`Time Spirit`}
+            onPress={() => {
+              setProgress(0.001);
+            }}
+          />
+          <LinearProgress value={progres} variant="determinate"/>
+
+          <Progress.Circle
+            size={70}
+            showsText={true}
+            progress={progres}
+            textStyle={{ fontSize: 20, fontWeight: "bold" }}
+            borderWidth={1}
+            color="red"
+            borderColor="green"
+
+            
+          />
+          <CountdownCircleTimer
+            isPlaying={progres}
+            duration={45}
+            colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+            colorsTime={[9, 6, 3, 0]}
+            size={70}
+            isGrowing
+            rotation="counterclockwise"
+            key={progres}
+            
+          >
+            {({ remainingTime }) => <Text>{remainingTime}</Text>}
+          </CountdownCircleTimer>
+        </View>
         <Button title={`Time Out`} />
       </View>
     </View>

@@ -7,7 +7,7 @@
     "icon": "./assets/BurgamaBlue.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/Trip.webp",
+      "image": "./assets/connect_dots_h_c.gif",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
