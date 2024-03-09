@@ -16,16 +16,16 @@ export default function Tournament() {
         if (subs) {
           setProgress(progres + 0.01);
         }
-      }, 45000);
+      }, 1000);
     }
     return () => {
       subs = false;
     };
   }, [progres]);
 
-useEffect(() => {
+// useEffect(() => {
 
-})
+// })
 
   return (
     <View
@@ -186,7 +186,7 @@ useEffect(() => {
           <Button
             title={`Time Spirit`}
             onPress={() => {
-              setProgress(0.001);
+              setProgress(0.00001);
             }}
           />
           <LinearProgress value={progres} variant="determinate"/>
@@ -216,7 +216,32 @@ useEffect(() => {
             {({ remainingTime }) => <Text>{remainingTime}</Text>}
           </CountdownCircleTimer>
         </View>
-        <Button title={`Time Out`} />
+
+        <View style={{
+            display: "flex",
+            width: 150,
+            gap: 10,
+            borderWidth: 1,
+            alignItems: "center",
+          }}>
+
+        <Button title={`Time Out`} onPress={() => {
+              setProgress(0.00001);
+            }} />
+        <CountdownCircleTimer
+            isPlaying={progres}
+            duration={45}
+            colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+            colorsTime={[9, 6, 3, 0]}
+            size={70}
+            isGrowing
+            rotation="counterclockwise"
+            key={progres}
+            
+          >
+            {({ remainingTime }) => <Text>{remainingTime}</Text>}
+          </CountdownCircleTimer>
+        </View>
       </View>
     </View>
   );
