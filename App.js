@@ -18,7 +18,7 @@ function App() {
     <PaperProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="match"
+          initialRouteName="setupmatch"
           screenOptions={{ headerShown: false }}
         >
           <Stack.Screen name="welcome" component={WelcomeScreen} />
