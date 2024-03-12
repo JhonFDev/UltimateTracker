@@ -1,9 +1,11 @@
-import {  SafeAreaView,  StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
 import { Badge, Button, Icon, Input, ListItem } from "@rneui/themed";
 import PlayerList from "../../PlayerList";
 
 export default function SetupLineUps() {
+  const [name, setName] = useState('')
+  const [dorso, setDorso] = useState('')
   return (
     <SafeAreaView style={styles.viewcontainersetuplineups}>
       <View style={{ display: "flex", flexDirection: "row", marginBottom: 10 }}>
@@ -15,41 +17,35 @@ export default function SetupLineUps() {
         />
       </View>
       {/* Lista de jugadores */}
-      <SafeAreaView style={{ width: 350, borderWidth:1, alignItems:"center" }}>
+      <View style>
+        <SafeAreaView style={{ alignItems: "center", height: 410 }}>
+          {/* lista con flatlist react native */}
+          <PlayerList />
+          {/* fin lista con flatlist react native */}
+        </SafeAreaView>
+      </View>
 
-        {/* lista con  list elements */}
-        {/* <ListItem
-          containerStyle={{ borderWidth: 1 }}
-          topDivider={true}
-          bottomDivider={true}
-        >
-          <ListItem.Content style={{ alignItems: "center" }}>
-            <ListItem.Title style={{ fontSize: 19, fontWeight: "600" }}>
-              JhonF 17
-            </ListItem.Title>
-          </ListItem.Content>
-        </ListItem> */}
-
-        {/* lista con flatlist react native */}
-        <PlayerList />
-      </SafeAreaView>
+      {/* Agregar Jugador */}
       <View
         style={{
-          width: 400,
+          width: 380,
           paddingTop: 10,
-          height: 200,
           backgroundColor: "#11111120",
+          top: 27,
         }}
       >
         <Input
           placeholder="Nombre"
           placeholderTextColor={"#111"}
           inputStyle={{ textAlign: "center" }}
+          onChangeText={(text) => {setName(text)}}
         />
         <Input
           placeholder="# Dorso"
           placeholderTextColor={"#111"}
           inputStyle={{ textAlign: "center" }}
+          onChangeText={(text) => {setDorso(text)}}
+          keyboardType="number-pad"
         />
         <View
           style={{
@@ -92,6 +88,7 @@ export default function SetupLineUps() {
           />
         </View>
       </View>
+      {/*Fin Agregar Jugador */}
     </SafeAreaView>
   );
 }
@@ -99,9 +96,8 @@ export default function SetupLineUps() {
 const styles = StyleSheet.create({
   viewcontainersetuplineups: {
     width: 380,
-    height: 680,
     marginTop: 10,
-    justifyContent: "center",
     alignItems: "center",
+    height: 680,
   },
 });

@@ -74,7 +74,6 @@ const styles = StyleSheet.create({
   viewlineups: {
     width: 380,
     height: 650,
-    alignItems:"center"
-    
+    alignItems: "center",
   },
 });
