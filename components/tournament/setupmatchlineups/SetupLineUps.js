@@ -64,11 +64,11 @@ export default function SetupLineUps() {
       </View>
       {/* Lista de jugadores */}
       <View style>
-        <SafeAreaView style={{ alignItems: "center", height: 410 }}>
+        <View style={{ alignItems: "center", height: 410,width:370 }}>
           {/* lista con flatlist react native */}
           <PlayerList playersData={playerdbs} />
           {/* fin lista con flatlist react native */}
-        </SafeAreaView>
+        </View>
       </View>
 
       {/* Agregar Jugador */}
@@ -95,7 +95,8 @@ export default function SetupLineUps() {
           onChangeText={(dorso) => {
             setDorso(dorso);
           }}
-          keyboardType="number-pad"
+          keyboardType="numbers-and-punctuation"
+          
         />
         {/* Botonoes Agregar Jugador y guardar lista */}
         <View
