@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-export default function Player({ id, name, dorso }) {
+export default function Player({ id, name, dorso,text}) {
   return (
     <View style={styles.viewcontainerplayer}>
       <Text style={styles.text}>{name}</Text>
+      <Text style={styles.text}>{text}</Text>
 
       <Text style={styles.text}>{dorso}</Text>
     </View>

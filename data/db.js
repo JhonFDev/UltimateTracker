@@ -12,42 +12,42 @@ const playerData = [
   {
     id: 3,
     name: "Nathalia",
-    numDorso: 67,
+    dorso: 67,
   },
   {
     id: 4,
     name: "Mayron",
-    numDorso: 90,
+    dorso: 90,
   },
   {
     id: 5,
     name: "Valentina",
-    numDorso: 15,
+    dorso: 15,
   },
   {
     id: 6,
     name: "Leoneider",
-    numDorso: 96,
+    dorso: 96,
   },
   {
     id: 7,
     name: "Katy",
-    numDorso: 32,
+    dorso: 32,
   },
   {
     id: 8,
     name: "Kimico",
-    numDorso: 13,
+    dorso: 13,
   },
   {
     id: 9,
     name: "Juancho",
-    numDorso: 23,
+    dorso: 23,
   },
   {
     id: 10,
     name: "Juan Pablo Quintero",
-    numDorso: 10,
+    dorso: 10,
   },
 ];
 

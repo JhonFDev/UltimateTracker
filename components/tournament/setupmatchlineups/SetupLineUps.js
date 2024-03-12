@@ -21,8 +21,8 @@ export default function SetupLineUps() {
   const addplayer = async () => {
     const newPlayer = {
       id: Math.floor(Math.random() * 1000000),
-      text: name,
-      dorso: dorso,
+      name,
+      dorso,
     };
     try {
       await AsyncStorage.setItem(
@@ -66,7 +66,7 @@ export default function SetupLineUps() {
       <View style>
         <SafeAreaView style={{ alignItems: "center", height: 410 }}>
           {/* lista con flatlist react native */}
-          <PlayerList playerData={PlayerList} />
+          <PlayerList playersData={playerdbs} />
           {/* fin lista con flatlist react native */}
         </SafeAreaView>
       </View>
