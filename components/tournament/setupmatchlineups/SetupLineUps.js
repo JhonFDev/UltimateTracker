@@ -1,11 +1,57 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Badge, Button, Icon, Input, ListItem } from "@rneui/themed";
+import { useDispatch, useSelector } from "react-redux";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
+
+// mis imports
 import PlayerList from "../../PlayerList";
+import { addPlayerReducer, setPlayerReducer } from "../../../redux/dbSlice";
+import { playerData } from "../../../data/db";
 
 export default function SetupLineUps() {
-  const [name, setName] = useState('')
-  const [dorso, setDorso] = useState('')
+  const [name, setName] = useState("");
+  const [dorso, setDorso] = useState("");
+  const listPlayers = useSelector((state) => state.db.db);
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+  const playerdbs = useSelector((state) => state.db.db);
+
+  const addplayer = async () => {
+    const newPlayer = {
+      id: Math.floor(Math.random() * 1000000),
+      text: name,
+      dorso: dorso,
+    };
+    try {
+      await AsyncStorage.setItem(
+        "@DBs",
+        JSON.stringify([...listPlayers, newPlayer])
+      );
+      dispatch(addPlayerReducer(newPlayer));
+      console.log("se ha guardado correctamente", newPlayer);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    const getPlayers = async () => {
+      try {
+        const db = await AsyncStorage.getItem("@DBs");
+        if (db !== null) {
+          dispatch(setPlayerReducer(JSON.parse(db)))
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    };
+    getPlayers()
+
+    
+  }, []);
+
   return (
     <SafeAreaView style={styles.viewcontainersetuplineups}>
       <View style={{ display: "flex", flexDirection: "row", marginBottom: 10 }}>
@@ -20,7 +66,7 @@ export default function SetupLineUps() {
       <View style>
         <SafeAreaView style={{ alignItems: "center", height: 410 }}>
           {/* lista con flatlist react native */}
-          <PlayerList />
+          <PlayerList playerData={PlayerList} />
           {/* fin lista con flatlist react native */}
         </SafeAreaView>
       </View>
@@ -38,15 +84,20 @@ export default function SetupLineUps() {
           placeholder="Nombre"
           placeholderTextColor={"#111"}
           inputStyle={{ textAlign: "center" }}
-          onChangeText={(text) => {setName(text)}}
+          onChangeText={(text) => {
+            setName(text);
+          }}
         />
         <Input
           placeholder="# Dorso"
           placeholderTextColor={"#111"}
           inputStyle={{ textAlign: "center" }}
-          onChangeText={(text) => {setDorso(text)}}
+          onChangeText={(dorso) => {
+            setDorso(dorso);
+          }}
           keyboardType="number-pad"
         />
+        {/* Botonoes Agregar Jugador y guardar lista */}
         <View
           style={{
             display: "flex",
@@ -55,6 +106,7 @@ export default function SetupLineUps() {
           }}
         >
           <Button
+            onPress={navigation.goBack}
             buttonStyle={{
               width: 55,
               borderRadius: 20,
@@ -71,6 +123,7 @@ export default function SetupLineUps() {
             }
           />
           <Button
+            onPress={addplayer}
             buttonStyle={{
               width: 55,
               borderRadius: 40,

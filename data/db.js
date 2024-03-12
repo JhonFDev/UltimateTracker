@@ -2,12 +2,12 @@ const playerData = [
   {
     id: 1,
     name: "JhonF",
-    numDorso: 17,
+    dorso: 17,
   },
   {
     id: 2,
     name: "Marisol",
-    numDorso: 26,
+    dorso: 26,
   },
   {
     id: 3,

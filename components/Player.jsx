@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-export default function Player({ id, name, numDorso }) {
+export default function Player({ id, name, dorso }) {
   return (
     <View style={styles.viewcontainerplayer}>
       <Text style={styles.text}>{name}</Text>
 
-      <Text style={styles.text}>{numDorso}</Text>
+      <Text style={styles.text}>{dorso}</Text>
     </View>
   );
 }

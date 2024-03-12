@@ -9,16 +9,16 @@ export const dbSlice = createSlice({
   initialState,
   reducers: {
 
-    setDbReducer: (state, action) => {
+    setPlayerReducer: (state, action) => {
       state.db = action.payload;
       console.log(state.db);
     },
 
-    addDbReducer: (state, action) => {
+    addPlayerReducer: (state, action) => {
       state.db.push(action.payload);
     },
 
-    DeleteDbReducer: (state, action) => {
+    DeletePlayerReducer: (state, action) => {
       const id = action.payload;
       state.db = state.db.filter((player) => player.id !== id);
     },
@@ -27,8 +27,8 @@ export const dbSlice = createSlice({
 
 
 export const {
-    setDbReducer,
-    addDbReducer,
-    DeleteDbReducer
+    setPlayerReducer,
+    addPlayerReducer,
+    DeletePlayerReducer
 } = dbSlice.actions;
 export default dbSlice.reducer;
