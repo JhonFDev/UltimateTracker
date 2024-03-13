@@ -57,14 +57,14 @@ export default function SetupLineUps() {
       <View style={{ display: "flex", flexDirection: "row", marginBottom: 10 }}>
         <Text style={{ fontWeight: "700", fontSize: 22 }}># Jugadores: </Text>
         <Badge
-          value="10"
+          value={"10"}
           badgeStyle={{ width: 40, height: 35, backgroundColor: "#d9a627" }}
           textStyle={{ fontSize: 20, fontWeight: "bold", color: "#01214e" }}
         />
       </View>
       {/* Lista de jugadores */}
       <View style>
-        <View style={{ alignItems: "center", height: 410,width:370 }}>
+        <View style={{ alignItems:"center", height: 410,width:370, }}>
           {/* lista con flatlist react native */}
           <PlayerList playersData={playerdbs} />
           {/* fin lista con flatlist react native */}

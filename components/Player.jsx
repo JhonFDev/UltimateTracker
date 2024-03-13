@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { IconButton } from "react-native-paper";
+import { IconButton, Surface } from "react-native-paper";
 import { useDispatch, useSelector } from "react-redux";
 import { DeletePlayerReducer } from "../redux/dbSlice";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -22,7 +22,7 @@ export default function Player({ id, name, dorso, text }) {
     }
   };
   return (
-    <>
+    <Surface style={styles.surfaceview} elevation={2}>
       <View style={styles.viewcontainer}>
         {/* jugador y dorso */}
         <View style={styles.viewcontainerplayer}>
@@ -38,18 +38,30 @@ export default function Player({ id, name, dorso, text }) {
           <IconButton icon="delete" size={25} iconColor="red" onPress={handleDeletePlayer}/>
         </View>
       </View>
-    </>
+    </Surface>
   );
 }
 
 const styles = StyleSheet.create({
+  surfaceview:{
+    marginVertical:12,
+    shadowOpacity:0.9,
+    borderRadius:50,
+    shadowOffset:{
+      width:2,
+      height:90
+    },
+    elevation:4,
+    shadowColor:"#01214e",
+    width: 250,    
+  },
   viewcontainer: {
     flexDirection: "row",
     flex: 1,
     justifyContent: "space-between",
-    width: 300,
+    width: 250,
     marginVertical: 6,
-    backgroundColor: "#d9a62740",
+    // backgroundColor: "#d9a62740",
     alignItems: "center",
   },
   viewcontainerplayer: {
@@ -59,6 +71,7 @@ const styles = StyleSheet.create({
     width: "50%",
     justifyContent: "space-between",
     alignItems: "center",
+    left:15,    
   },
   text: {
     fontSize: 20,
