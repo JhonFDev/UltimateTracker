@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { IconButton, Surface } from "react-native-paper";
 import { useDispatch, useSelector } from "react-redux";
 import { DeletePlayerReducer } from "../redux/dbSlice";
@@ -34,8 +34,29 @@ export default function Player({ id, name, dorso, text }) {
         </View>
 
         {/* Boton accion */}
-        <View style={{ justifyContent: "center", height: 50 }}>
-          <IconButton icon="delete" size={25} iconColor="red" onPress={handleDeletePlayer}/>
+        <View
+          style={{
+            justifyContent: "center",
+            height: 50,
+            display: "flex",
+            flexDirection: "row",
+            width: 80,
+            borderWidth: 1,
+            alignItems: "center",
+          }}
+        >
+          <IconButton
+            icon="pencil"
+            size={22}
+            iconColor="green"
+            onPress={() => setIsEditing(true)}
+          />
+          <IconButton
+            icon="delete"
+            size={22}
+            iconColor="red"
+            onPress={handleDeletePlayer}
+          />
         </View>
       </View>
     </Surface>
@@ -43,17 +64,17 @@ export default function Player({ id, name, dorso, text }) {
 }
 
 const styles = StyleSheet.create({
-  surfaceview:{
-    marginVertical:12,
-    shadowOpacity:0.9,
-    borderRadius:50,
-    shadowOffset:{
-      width:2,
-      height:90
+  surfaceview: {
+    marginVertical: 12,
+    shadowOpacity: 0.9,
+    borderRadius: 50,
+    shadowOffset: {
+      width: 2,
+      height: 90,
     },
-    elevation:4,
-    shadowColor:"#01214e",
-    width: 250,    
+    elevation: 4,
+    shadowColor: "#01214e",
+    width: 250,
   },
   viewcontainer: {
     flexDirection: "row",
@@ -71,7 +92,7 @@ const styles = StyleSheet.create({
     width: "50%",
     justifyContent: "space-between",
     alignItems: "center",
-    left:15,    
+    left: 15,
   },
   text: {
     fontSize: 20,

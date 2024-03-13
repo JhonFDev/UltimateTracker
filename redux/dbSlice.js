@@ -22,6 +22,12 @@ export const dbSlice = createSlice({
       const id = action.payload;
       state.db = state.db.filter((player) => player.id !== id);
     },
+    updatePlayerReducer: (state, action) => {
+      const { id, updatedPlayer } = action.payload;
+      state.db = state.db.map((player) =>
+        player.id === id ? updatedPlayer : player
+      );
+    },
   },
 });
 
@@ -29,6 +35,7 @@ export const dbSlice = createSlice({
 export const {
     setPlayerReducer,
     addPlayerReducer,
-    DeletePlayerReducer
+    DeletePlayerReducer,
+    updatePlayerReducer
 } = dbSlice.actions;
 export default dbSlice.reducer;
